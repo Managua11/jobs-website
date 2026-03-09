@@ -1,0 +1,30 @@
+<div class="job-card" [class.job-card--featured]="job.featured">
+  <img class="job-card__logo" [src]="job.logo" [alt]="job.company"/>
+  <div class="job-card__info">
+    <div class="job-card__top">
+      <span class="job-card__company">{{ job.company }}</span>
+      @if (job.new) {
+        <span class="job-card__badge job-card__badge--new">New!</span>
+      }
+      @if (job.featured) {
+        <span class="job-card__badge job-card__badge--featured">Featured</span>
+      }
+    </div>
+    <p class="job-card__position">{{ job.position }}</p>
+    <ul class="job-card__meta">
+      <li>{{ job.postedAt }}</li>
+      <li>{{ job.contract }}</li>
+      <li>{{ job.location }}</li>
+    </ul>
+  </div>
+  <div class="job-card__tags">
+    <button class="job-card__tag">{{ job.role }}</button>
+    <button class="job-card__tag">{{ job.level }}</button>
+    @for (lang of job.languages; track lang) {
+      <button class="job-card__tag">{{ lang }}</button>
+    }
+    @for (tool of job.tools; track tool) {
+      <button class="job-card__tag">{{ tool }}</button>
+    }
+  </div>
+</div>

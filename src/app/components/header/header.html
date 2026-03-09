@@ -1,0 +1,9 @@
+<div class="header">
+  <input type="text" [(ngModel)]="searchValue" placeholder="Search..." class="header__input">
+  <select [formControl]="locationControl" name="Location" id="locations" class="header__select">
+    <option value="all" selected>All</option>
+    <option value="On Site">On Site</option>
+    <option value="Remote">Remote</option>
+  </select>
+  <button class="header__button" (click)="filter()">SEARCH</button>
+</div>
