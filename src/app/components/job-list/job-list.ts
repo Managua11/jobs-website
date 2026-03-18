@@ -1,41 +1,33 @@
-import { Component, Input, OnInit, OnChanges, SimpleChanges } from '@angular/core';
-import { BehaviorSubject, combineLatest, Observable } from 'rxjs';
-import { map } from 'rxjs/operators';
+import {Component, Input, OnChanges, OnInit, SimpleChanges} from '@angular/core';
+import {Job} from '../../models/job';
 import {JobService} from '../../services/job-service';
 import {JobCard} from '../job-card/job-card';
 import {AsyncPipe} from '@angular/common';
-import {Job} from '../../models/job';
+import {Observable, tap} from 'rxjs';
 
 @Component({
   selector: 'app-job-list',
-  standalone: true,
-  imports: [JobCard, AsyncPipe],
-  templateUrl: './job-list.html'
+  imports: [
+    JobCard,
+    AsyncPipe
+  ],
+  templateUrl: './job-list.html',
+  styleUrl: './job-list.scss',
 })
 export class JobList implements OnInit, OnChanges {
   @Input() filterInput: any;
 
-  private filterSubject = new BehaviorSubject<string>('');
-
-  filteredJobs$!: Observable<Job[]>;
-
+  jobs$!: Observable<Job[]>;
+  jobs: Job[] = [];
   constructor(private jobService: JobService) {}
 
-  ngOnChanges(changes: SimpleChanges) {
-    if (changes['filterInput'] && this.filterInput) {
-      this.filterSubject.next(this.filterInput.searchValue || ''   );
-    }
+  ngOnChanges() {
   }
-
   ngOnInit() {
-    this.filteredJobs$ = combineLatest([
-      this.jobService.getJobs(),
-      this.filterSubject
-    ]).pipe(
-      map(([jobs, searchTerm]) => {
-        if (!searchTerm) return jobs;
-        return jobs.filter(job => job.position === searchTerm);
+    this.jobs$ = this.jobService.getJobs().pipe(
+      tap((jobs: Job[]) => {
+        this.jobs = jobs;
       })
-    );
+    )
   }
 }

@@ -9,6 +9,6 @@ import {Job} from '../models/job';
 export class JobService {
   constructor(private http: HttpClient) {}
   getJobs(): Observable<Job[]>{
-    return this.http.get<Job[]>('/data.json');
+    return this.http.get<Job[]>('./assets/data.json');
   }
 }

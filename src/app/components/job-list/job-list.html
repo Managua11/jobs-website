@@ -1,6 +1,7 @@
 <div class="job-list">
   @for(job of jobs$ | async; track $index){
-    @if ((job.position === filterInput.searchValue || filterInput.searchValue === "")){
+    @if ((job.position === filterInput.searchValue || filterInput.searchValue === "")
+    && (job.location === filterInput.locationControl || filterInput.locationControl === "all")){
     <app-job-card [job]="job"/>
     }
   }
