@@ -23,4 +23,20 @@
     height: 26px;
     border-radius: 15px;
   }
+  &__non-authorized{
+    display: flex;
+    width: 100%;
+    padding-right: 40px;
+    justify-content: end;
+    align-items: center;
+    gap: 20px;
+    p{
+      color: blue;
+      cursor: pointer;
+      font-size: 18px;
+      font-weight: bold;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+  }
 }

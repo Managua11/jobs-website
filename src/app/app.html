@@ -2,7 +2,5 @@
   <header class="app__header">
     <app-header (filterOutput)="handleSearch($event)"/>
   </header>
-  <main class="app__content">
-    <app-job-list [filterInput]="filterValues"/>
-  </main>
+  <router-outlet/>
 </div>

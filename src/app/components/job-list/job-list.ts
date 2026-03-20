@@ -24,6 +24,9 @@ export class JobList implements OnInit, OnChanges {
   ngOnChanges() {
   }
   ngOnInit() {
+    if (!this.filterInput) {
+      this.filterInput = { searchValue: '', locationControl: 'all' };
+    }
     this.jobs$ = this.jobService.getJobs().pipe(
       tap((jobs: Job[]) => {
         this.jobs = jobs;
