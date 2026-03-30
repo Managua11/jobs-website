@@ -11,5 +11,7 @@ export interface Job {
   "contract": string,
   "location": string,
   "languages": [],
-  "tools": []
+  "tools": [],
+  "responsibilities": string[],
+  "requirements": string[]
 }

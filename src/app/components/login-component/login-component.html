@@ -1,1 +1,17 @@
-<p>login-component works!</p>
+<div class="login">
+  <div class="login__card">
+    <h2 class="login__title">Login</h2>
+    <form #loginForm="ngForm" (ngSubmit)="onSubmit()" class="login__form">
+      <div class="login__field">
+        <label for="email">Email</label>
+        <input id="email" type="email" name="email" [(ngModel)]="user.email" placeholder="Enter your email" required>
+      </div>
+      <div class="login__field">
+        <label for="password">Password</label>
+        <input id="password" type="password" name="password" [(ngModel)]="user.password" placeholder="Enter your password" required>
+      </div>
+      <button type="submit" class="login__button" [disabled]="loginForm.invalid">Login</button>
+    </form>
+    <p class="login__footer">Don't have an account? <a routerLink="/register">Register</a></p>
+  </div>
+</div>

@@ -10,7 +10,7 @@
         <span class="job-card__badge job-card__badge--featured">Featured</span>
       }
     </div>
-    <p class="job-card__position">{{ job.position }}</p>
+    <p class="job-card__position" (click)="openPage(job.id)">{{ job.position }}</p>
     <ul class="job-card__meta">
       <li>{{ job.postedAt }}</li>
       <li>{{ job.contract }}</li>

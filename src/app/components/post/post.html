@@ -1,0 +1,162 @@
+<div class="post">
+  <div class="post__card">
+    <h3 class="post__header">Create a statement</h3>
+
+    <form #loginForm="ngForm" (ngSubmit)="onSubmit()" class="post__form">
+
+      <!-- Position -->
+      <div class="post__field">
+        <label for="position">Position</label>
+        <input
+          id="position"
+          type="text"
+          name="position"
+          [(ngModel)]="job.position"
+          required
+        />
+      </div>
+
+      <!-- Company -->
+      <div class="post__field">
+        <label for="company">Company</label>
+        <input
+          id="company"
+          type="text"
+          name="company"
+          [(ngModel)]="job.company"
+          required
+        />
+      </div>
+
+      <!-- Role -->
+      <div class="post__field">
+        <label for="role">Role</label>
+        <input
+          id="role"
+          type="text"
+          name="role"
+          [(ngModel)]="job.role"
+        />
+      </div>
+
+      <!-- Level -->
+      <div class="post__field">
+        <label for="level">Level</label>
+        <input
+          id="level"
+          type="text"
+          name="level"
+          [(ngModel)]="job.level"
+        />
+      </div>
+
+      <!-- Location -->
+      <div class="post__field">
+        <label for="location">Location</label>
+        <input
+          id="location"
+          type="text"
+          name="location"
+          [(ngModel)]="job.location"
+        />
+      </div>
+
+      <!-- Contract -->
+      <div class="post__field">
+        <label for="contract">Contract</label>
+        <input
+          id="contract"
+          type="text"
+          name="contract"
+          [(ngModel)]="job.contract"
+        />
+      </div>
+
+      <!-- Posted At -->
+      <div class="post__field">
+        <label for="postedAt">Posted At</label>
+        <input
+          id="postedAt"
+          type="text"
+          name="postedAt"
+          [(ngModel)]="job.postedAt"
+        />
+      </div>
+
+      <!-- New -->
+      <div class="post__field">
+        <label>
+          <input
+            type="checkbox"
+            name="new"
+            [(ngModel)]="job.new"
+          />
+          New
+        </label>
+      </div>
+
+      <!-- Featured -->
+      <div class="post__field">
+        <label>
+          <input
+            type="checkbox"
+            name="featured"
+            [(ngModel)]="job.featured"
+          />
+          Featured
+        </label>
+      </div>
+
+<!--      &lt;!&ndash; Languages (comma separated) &ndash;&gt;-->
+<!--      <div class="post__field">-->
+<!--        <label for="languages">Languages</label>-->
+<!--        <input-->
+<!--          id="languages"-->
+<!--          type="text"-->
+<!--          name="languages"-->
+<!--          [(ngModel)]="languagesInput"-->
+<!--          placeholder="e.g. Angular, React"-->
+<!--        />-->
+<!--      </div>-->
+
+<!--      &lt;!&ndash; Tools &ndash;&gt;-->
+<!--      <div class="post__field">-->
+<!--        <label for="tools">Tools</label>-->
+<!--        <input-->
+<!--          id="tools"-->
+<!--          type="text"-->
+<!--          name="tools"-->
+<!--          [(ngModel)]="toolsInput"-->
+<!--          placeholder="e.g. Git, Docker"-->
+<!--        />-->
+<!--      </div>-->
+
+<!--      &lt;!&ndash; Responsibilities &ndash;&gt;-->
+<!--      <div class="post__field">-->
+<!--        <label for="responsibilities">Responsibilities</label>-->
+<!--        <textarea-->
+<!--          id="responsibilities"-->
+<!--          name="responsibilities"-->
+<!--          [(ngModel)]="responsibilitiesInput"-->
+<!--          placeholder="Comma separated"-->
+<!--        ></textarea>-->
+<!--      </div>-->
+
+<!--      &lt;!&ndash; Requirements &ndash;&gt;-->
+<!--      <div class="post__field">-->
+<!--        <label for="requirements">Requirements</label>-->
+<!--        <textarea-->
+<!--          id="requirements"-->
+<!--          name="requirements"-->
+<!--          [(ngModel)]="requirementsInput"-->
+<!--          placeholder="Comma separated"-->
+<!--        ></textarea>-->
+<!--      </div>-->
+
+      <button type="submit" [disabled]="loginForm.invalid">
+        Submit
+      </button>
+
+    </form>
+  </div>
+</div>

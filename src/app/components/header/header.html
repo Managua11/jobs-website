@@ -1,12 +1,13 @@
 <div class="header">
   @if (authService.isLoggedIn()){
-  <input type="text" [(ngModel)]="searchValue" placeholder="Search..." class="header__input">
-  <select [formControl]="locationControl" name="Location" id="locations" class="header__select">
-    <option value="all" selected>All</option>
-    <option value="On Site">On Site</option>
-    <option value="Remote">Remote</option>
-  </select>
-  <button class="header__button" (click)="filter()">SEARCH</button>
+    <input type="text" [(ngModel)]="searchValue" placeholder="Search..." class="header__input">
+    <select [formControl]="locationControl" name="Location" id="locations" class="header__select">
+      <option value="all" selected>All</option>
+      <option value="On Site">On Site</option>
+      <option value="Remote">Remote</option>
+    </select>
+    <button class="header__button" (click)="filter()">SEARCH</button>
+    <p class="header__statement" (click)="toJobPost()">Create a job listing</p>
   }@else{
     <div class="header__non-authorized">
       <p class="header__non-authorized-login" (click)="handleLogin()">Log-In</p>

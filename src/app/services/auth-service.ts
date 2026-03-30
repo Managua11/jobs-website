@@ -1,28 +1,26 @@
-import { Injectable, signal } from '@angular/core';
-import { Router } from '@angular/router';
+import {Injectable, inject, signal} from '@angular/core';
+import { Auth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, user } from '@angular/fire/auth';
+import { Observable } from 'rxjs';
 
 @Injectable({ providedIn: 'root' })
 export class AuthService {
-  isLoggedIn = signal(true);
-
-  constructor(private router: Router) {}
-
-  login(email: string, password: string): boolean {
-    if (email && password) {
-      localStorage.setItem('token', 'dummy-token');
-      this.isLoggedIn.set(true);
-      return true;
-    }
-    return false;
+  private auth = inject(Auth);
+  user$ = user(this.auth);
+  isLoggedIn = signal(false);
+  async register(email: string, password: string) {
+    const result = await createUserWithEmailAndPassword(this.auth, email, password);
+    this.isLoggedIn.set(true);
+    return result;
   }
 
-  logout() {
-    localStorage.removeItem('token');
+  async login(email: string, password: string) {
+    const result = await signInWithEmailAndPassword(this.auth, email, password);
+    this.isLoggedIn.set(true);
+    return result;
+  }
+
+  async logout() {
+    await signOut(this.auth);
     this.isLoggedIn.set(false);
-    this.router.navigate(['/login']);
-  }
-
-  isAuthenticated(): boolean {
-    return !!localStorage.getItem('token');
   }
 }

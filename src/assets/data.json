@@ -12,7 +12,18 @@
     "contract": "Full Time",
     "location": "USA Only",
     "languages": ["HTML", "CSS", "JavaScript"],
-    "tools": []
+    "tools": [],
+    "description": "Lead the development of high-performance user interfaces and improve overall user experience across the platform.",
+    "requirements": [
+      "5+ years of frontend development experience",
+      "Strong JavaScript and CSS skills",
+      "Experience with modern frameworks"
+    ],
+    "responsibilities": [
+      "Build scalable UI components",
+      "Optimize application performance",
+      "Collaborate with designers and backend developers"
+    ]
   },
   {
     "id": 2,
@@ -27,7 +38,18 @@
     "contract": "Part Time",
     "location": "Remote",
     "languages": ["Python"],
-    "tools": ["React"]
+    "tools": ["React"],
+    "description": "Work on both frontend and backend systems to deliver scalable web applications.",
+    "requirements": [
+      "3+ years experience",
+      "Strong Python knowledge",
+      "Experience with React"
+    ],
+    "responsibilities": [
+      "Develop backend APIs",
+      "Build responsive frontend features",
+      "Maintain code quality"
+    ]
   },
   {
     "id": 3,
@@ -42,7 +64,18 @@
     "contract": "Part Time",
     "location": "USA Only",
     "languages": ["JavaScript"],
-    "tools": ["React", "Sass"]
+    "tools": ["React", "Sass"],
+    "description": "Assist in building user interfaces and improving existing frontend features.",
+    "requirements": [
+      "Basic knowledge of JavaScript",
+      "Familiarity with React",
+      "Understanding of CSS preprocessors"
+    ],
+    "responsibilities": [
+      "Implement UI components",
+      "Fix bugs and improve UX",
+      "Work with senior developers"
+    ]
   },
   {
     "id": 4,
@@ -57,7 +90,18 @@
     "contract": "Contract",
     "location": "USA Only",
     "languages": ["CSS", "JavaScript"],
-    "tools": []
+    "tools": [],
+    "description": "Support the frontend team in building modern and responsive web interfaces.",
+    "requirements": [
+      "Basic HTML/CSS knowledge",
+      "JavaScript fundamentals",
+      "Attention to detail"
+    ],
+    "responsibilities": [
+      "Develop UI layouts",
+      "Ensure responsive design",
+      "Assist in testing features"
+    ]
   },
   {
     "id": 5,
@@ -72,7 +116,18 @@
     "contract": "Full Time",
     "location": "Worldwide",
     "languages": ["JavaScript", "Ruby"],
-    "tools": ["Sass"]
+    "tools": ["Sass"],
+    "description": "Build and maintain fullstack applications used by global users.",
+    "requirements": [
+      "Experience with JavaScript and Ruby",
+      "Understanding of web architecture",
+      "Team collaboration skills"
+    ],
+    "responsibilities": [
+      "Develop backend services",
+      "Integrate frontend and backend",
+      "Write maintainable code"
+    ]
   },
   {
     "id": 6,
@@ -87,7 +142,18 @@
     "contract": "Full Time",
     "location": "UK Only",
     "languages": ["Ruby"],
-    "tools": ["RoR"]
+    "tools": ["RoR"],
+    "description": "Help build and maintain backend services powering our platform.",
+    "requirements": [
+      "Basic Ruby knowledge",
+      "Understanding of REST APIs",
+      "Problem-solving skills"
+    ],
+    "responsibilities": [
+      "Write backend logic",
+      "Fix bugs",
+      "Support senior engineers"
+    ]
   },
   {
     "id": 7,
@@ -102,7 +168,18 @@
     "contract": "Full Time",
     "location": "Worldwide",
     "languages": ["HTML", "JavaScript"],
-    "tools": ["Sass"]
+    "tools": ["Sass"],
+    "description": "Work on frontend features and help improve overall user experience.",
+    "requirements": [
+      "HTML/CSS basics",
+      "JavaScript knowledge",
+      "Willingness to learn"
+    ],
+    "responsibilities": [
+      "Implement UI features",
+      "Fix issues",
+      "Collaborate with team"
+    ]
   },
   {
     "id": 8,
@@ -117,7 +194,18 @@
     "contract": "Full Time",
     "location": "Remote",
     "languages": ["JavaScript"],
-    "tools": ["Vue", "Sass"]
+    "tools": ["Vue", "Sass"],
+    "description": "Build and maintain frontend applications using modern frameworks.",
+    "requirements": [
+      "Experience with JavaScript",
+      "Familiarity with Vue",
+      "Basic styling skills"
+    ],
+    "responsibilities": [
+      "Develop UI components",
+      "Ensure performance",
+      "Maintain codebase"
+    ]
   },
   {
     "id": 9,
@@ -132,7 +220,18 @@
     "contract": "Full Time",
     "location": "Worldwide",
     "languages": ["JavaScript", "Python"],
-    "tools": ["Django"]
+    "tools": ["Django"],
+    "description": "Develop fullstack systems combining modern frontend and robust backend services.",
+    "requirements": [
+      "Experience with Python and JavaScript",
+      "Knowledge of Django",
+      "Understanding of databases"
+    ],
+    "responsibilities": [
+      "Build APIs",
+      "Develop UI",
+      "Ensure system reliability"
+    ]
   },
   {
     "id": 10,
@@ -147,6 +246,17 @@
     "contract": "Part Time",
     "location": "Worldwide",
     "languages": ["JavaScript"],
-    "tools": ["React", "Sass"]
+    "tools": ["React", "Sass"],
+    "description": "Create user-friendly frontend solutions and improve UI performance.",
+    "requirements": [
+      "JavaScript fundamentals",
+      "React knowledge",
+      "Basic UI/UX understanding"
+    ],
+    "responsibilities": [
+      "Build UI components",
+      "Optimize performance",
+      "Collaborate with designers"
+    ]
   }
 ]

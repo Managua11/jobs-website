@@ -2,6 +2,7 @@
   width: 100%;
   display: flex;
   justify-content: center;
+  align-items: center;
   margin-top: 100px;
   flex-direction: row;
   gap: 10px;
@@ -9,6 +10,7 @@
     display: flex;
     border-radius: 12px;
     padding-left: 10px;
+    height: 26px;
   }
   &__select{
     display: flex;
@@ -38,5 +40,10 @@
       text-decoration: underline;
       text-underline-offset: 3px;
     }
+  }
+  &__statement{
+    cursor: pointer;
+    text-decoration: underline;
+    text-underline-offset: 4px;
   }
 }

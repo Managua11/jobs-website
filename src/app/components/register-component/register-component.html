@@ -1,1 +1,21 @@
-<p>register-component works!</p>
+<div class="register">
+  <div class="register__card">
+    <h2 class="register__title">Register</h2>
+    <form #registerForm="ngForm" (ngSubmit)="onSubmit()" class="register__form">
+      <div class="register__field">
+        <label for="email">Email</label>
+        <input id="email" type="email" name="email" [(ngModel)]="user.email" placeholder="Enter your email" required>
+      </div>
+      <div class="register__field">
+        <label for="number">Phone Number</label>
+        <input id="number" type="tel" name="number" [(ngModel)]="user.phoneNumber" placeholder="Enter your number">
+      </div>
+      <div class="register__field">
+        <label for="password">Password</label>
+        <input id="password" type="password" name="password" [(ngModel)]="user.password" placeholder="Enter your password" required>
+      </div>
+      <button type="submit" class="register__button" [disabled]="registerForm.invalid">Register</button>
+    </form>
+    <p class="register__footer">Already have an account? <a routerLink="/login">Log in</a></p>
+  </div>
+</div>

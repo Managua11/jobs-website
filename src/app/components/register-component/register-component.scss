@@ -1,0 +1,99 @@
+.register {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100vh - 150px);
+
+  &__card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 40px;
+    width: 100%;
+    max-width: 420px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  }
+
+  &__title {
+    font-size: 28px;
+    font-weight: 700;
+    color: hsl(180, 29%, 50%);
+    text-align: center;
+    margin-bottom: 30px;
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  &__field {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+
+    label {
+      font-size: 14px;
+      font-weight: 500;
+      color: hsl(180, 8%, 52%);
+    }
+
+    input {
+      padding: 12px 16px;
+      border: 1.5px solid hsl(180, 31%, 85%);
+      border-radius: 8px;
+      font-size: 15px;
+      font-family: inherit;
+      transition: border-color 0.2s;
+      outline: none;
+
+      &::placeholder {
+        color: hsl(180, 8%, 72%);
+      }
+
+      &:focus {
+        border-color: hsl(180, 29%, 50%);
+      }
+    }
+  }
+
+  &__button {
+    padding: 12px;
+    background: hsl(180, 29%, 50%);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 700;
+    font-family: inherit;
+    cursor: pointer;
+    transition: background 0.2s;
+    margin-top: 5px;
+
+    &:hover {
+      background: hsl(180, 29%, 40%);
+    }
+
+    &:disabled {
+      background: hsl(180, 20%, 75%);
+      cursor: not-allowed;
+    }
+  }
+
+  &__footer {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 14px;
+    color: hsl(180, 8%, 52%);
+
+    a {
+      color: hsl(180, 29%, 50%);
+      font-weight: 700;
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}

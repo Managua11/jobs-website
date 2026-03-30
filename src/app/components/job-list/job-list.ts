@@ -1,9 +1,10 @@
-import {Component, Input, OnChanges, OnInit, SimpleChanges} from '@angular/core';
+import {Component, inject, Input, OnChanges, OnInit, SimpleChanges} from '@angular/core';
 import {Job} from '../../models/job';
 import {JobService} from '../../services/job-service';
 import {JobCard} from '../job-card/job-card';
 import {AsyncPipe} from '@angular/common';
-import {Observable, tap} from 'rxjs';
+import {combineLatest, map, Observable} from 'rxjs';
+import {FilterHelper} from '../../services/filter-helper';
 
 @Component({
   selector: 'app-job-list',
@@ -14,23 +15,17 @@ import {Observable, tap} from 'rxjs';
   templateUrl: './job-list.html',
   styleUrl: './job-list.scss',
 })
-export class JobList implements OnInit, OnChanges {
-  @Input() filterInput: any;
-
-  jobs$!: Observable<Job[]>;
-  jobs: Job[] = [];
+export class JobList implements OnInit {
+  filterHelper = inject(FilterHelper);
+  data$!: Observable<{ jobs: Job[]; filter: { name: string; location: string } }>;
   constructor(private jobService: JobService) {}
 
-  ngOnChanges() {
-  }
   ngOnInit() {
-    if (!this.filterInput) {
-      this.filterInput = { searchValue: '', locationControl: 'all' };
-    }
-    this.jobs$ = this.jobService.getJobs().pipe(
-      tap((jobs: Job[]) => {
-        this.jobs = jobs;
-      })
-    )
+    this.data$ = combineLatest([
+      this.jobService.getJobs(),
+      this.filterHelper.inputSubject
+    ]).pipe(
+      map(([jobs, filter]) => ({ jobs, filter }))
+    );
   }
 }

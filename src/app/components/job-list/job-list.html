@@ -1,8 +1,10 @@
+@if (data$ | async; as data) {
 <div class="job-list">
-  @for(job of jobs$ | async; track $index){
-    @if ((job.position === filterInput?.searchValue || filterInput?.searchValue === "")
-    && (job.location === filterInput?.locationControl || filterInput?.locationControl === "all")){
+  @for(job of data.jobs; track $index){
+    @if ((job.position.toLowerCase().includes(data.filter.name.toLowerCase()) || data.filter.name === "")
+    && ((job.location === 'Remote' && data.filter.location === 'Remote') || data.filter.location === 'all')){
     <app-job-card [job]="job"/>
     }
   }
 </div>
+}

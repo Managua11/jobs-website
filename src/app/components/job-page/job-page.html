@@ -1,0 +1,99 @@
+@if (job) {
+<div class="job-page">
+  <div class="job-page__header">
+    <img class="job-page__logo" [src]="job.logo" [alt]="job.company"/>
+    <div class="job-page__header-info">
+      <div class="job-page__company-row">
+        <span class="job-page__company">{{ job.company }}</span>
+        @if (job.new) {
+          <span class="job-page__badge job-page__badge--new">New!</span>
+        }
+        @if (job.featured) {
+          <span class="job-page__badge job-page__badge--featured">Featured</span>
+        }
+      </div>
+      <h1 class="job-page__position">{{ job.position }}</h1>
+      <ul class="job-page__meta">
+        <li>{{ job.postedAt }}</li>
+        <li>{{ job.contract }}</li>
+        <li>{{ job.location }}</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="job-page__details">
+    <div class="job-page__detail">
+      <h3>Role</h3>
+      <p>{{ job.role }}</p>
+    </div>
+    <div class="job-page__detail">
+      <h3>Level</h3>
+      <p>{{ job.level }}</p>
+    </div>
+    <div class="job-page__detail">
+      <h3>Contract</h3>
+      <p>{{ job.contract }}</p>
+    </div>
+    <div class="job-page__detail">
+      <h3>Location</h3>
+      <p>{{ job.location }}</p>
+    </div>
+  </div>
+
+  <div class="job-page__section">
+    <h2>About the Role</h2>
+    <p>We are looking for a talented {{ job.position }} to join {{ job.company }}. This is a {{ job.contract }} {{ job.location }} position at the {{ job.level }} level. You will play a key role in building and maintaining high-quality solutions that drive our products forward.</p>
+  </div>
+
+  <div class="job-page__section">
+    <h2>Responsibilities</h2>
+    <ul>
+      @for (resp of job.responsibilities; track resp) {
+        <li>{{ resp }}</li>
+      }
+    </ul>
+  </div>
+
+  <div class="job-page__section">
+    <h2>Requirements</h2>
+    <ul>
+      @for (req of job.requirements; track req) {
+        <li>{{ req }}</li>
+      }
+    </ul>
+  </div>
+
+  <div class="job-page__section">
+    <h2>What We Offer</h2>
+    <ul>
+      <li>Competitive salary and benefits package</li>
+      <li>Flexible working hours and {{ job.location === 'Remote' ? 'fully remote work' : 'modern office environment' }}</li>
+      <li>Opportunities for professional growth and career advancement</li>
+      <li>Collaborative and inclusive team culture</li>
+      <li>Access to the latest tools and technologies</li>
+    </ul>
+  </div>
+
+  <div class="job-page__tags-section">
+    <h3>Languages</h3>
+    <div class="job-page__tags">
+      @for (lang of job.languages; track lang) {
+        <span class="job-page__tag">{{ lang }}</span>
+      }
+    </div>
+  </div>
+
+  @if (job.tools.length > 0) {
+  <div class="job-page__tags-section">
+    <h3>Tools</h3>
+    <div class="job-page__tags">
+      @for (tool of job.tools; track tool) {
+        <span class="job-page__tag">{{ tool }}</span>
+      }
+    </div>
+  </div>
+  }
+
+  <button class="job-page__apply-btn">Apply Now</button>
+</div>
+}
